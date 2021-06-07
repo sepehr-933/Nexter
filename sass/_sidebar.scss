@@ -1,0 +1,45 @@
+.sidebar {
+  grid-column: sidebar-start / sidebar-end;
+  grid-row: 1 / -1;
+  background-color: $color-primary;
+  display: flex;
+  justify-content: center;
+
+  @media only screen and  (max-width: $bp-large){
+    grid-row: 1 / 2;
+    grid-column: 1 / -1;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  &__button {
+    border-radius: 0;
+    border: none;
+    height: 2px;
+    width: 4.5rem;
+    margin-top: 4rem;
+    background-color: $color-grey-light-1;
+
+    @media only screen and  (max-width: $bp-large){
+      margin-top: 0;
+      margin-right: 3rem;
+
+      &::before {transform: translateY(-1rem);}
+      &::after {transform: translateY(.8rem); height: 100%;}
+    }
+
+
+    &::before,
+    &::after {
+      height: 2px;
+      width: 4.5rem;
+      background-color: $color-grey-light-1;
+      content: "";
+      display: block;
+
+
+    }
+    &::before {transform: translateY(-1.5rem);}
+    &::after {transform: translateY(1.3rem); height: 120%;}
+  }
+}
